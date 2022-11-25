@@ -7,7 +7,7 @@
       <div class="title">{{ product.title }}</div>
       <div class="details">
         <div class="price">
-          $
+          <span>$</span>
           <div class="amount">{{ product.price }}</div>
         </div>
       </div>
@@ -52,6 +52,10 @@ $color-shades-60: #828282;
 
   .info-container {
     padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
 
     .title {
       display: -webkit-box;
