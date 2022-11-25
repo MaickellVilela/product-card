@@ -30,17 +30,19 @@ export default {
 .container {
   background-color: rgb(235, 235, 235);
 
+  // contentainer width
   width: 100%;
   max-width: 1184px;
+
+  // centering
   margin-left: auto;
   margin-right: auto;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: start;
-  // gap: 2rem;
 
+  // grid
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+
+  // breakpoints
 }
 </style>

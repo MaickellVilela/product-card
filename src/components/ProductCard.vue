@@ -26,12 +26,16 @@ export default {
 </script>
 
 <style lang="scss">
+$title-text-size: 1.5rem;
+$price-text-size: $title-text-size;
+
+$color-shades-80: #333;
+$color-shades-70: #565656;
+$color-shades-60: #828282;
+
 .product-card {
   background-color: white;
-  // border: 1px solid red;
-
   max-width: 100%;
-
   border-radius: 1rem;
 
   .image-container {
@@ -41,6 +45,8 @@ export default {
       display: block;
       width: 100%;
       border-radius: 1rem 1rem 0 0;
+
+      // TODO: squared image
     }
   }
 
@@ -54,7 +60,19 @@ export default {
       -webkit-box-orient: vertical;
       overflow: hidden;
 
-      font-size: 1.5rem;
+      font-size: $title-text-size;
+      color: $color-shades-80;
+    }
+
+    .price {
+      font-size: $price-text-size;
+      color: $color-shades-60;
+
+      .amount {
+        font-weight: 700;
+        display: inline-block;
+        color: $color-shades-70;
+      }
     }
   }
 }
