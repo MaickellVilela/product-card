@@ -1,23 +1,27 @@
 <template>
   <div class="container">
-    <ProductCard></ProductCard>
-    <ProductCard></ProductCard>
-    <ProductCard></ProductCard>
-    <ProductCard></ProductCard>
-    <ProductCard></ProductCard>
-    <ProductCard></ProductCard>
-    <ProductCard></ProductCard>
+    <ProductCard
+      v-for="(product, index) in PRODUCTS"
+      :key="index"
+      :product="product"
+    />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import ProductCard from "@/components/ProductCard.vue";
+import PRODUCTS from "@/mocks/products";
 
 export default {
   name: "ProductList",
   components: {
     ProductCard,
+  },
+  data: function () {
+    return {
+      PRODUCTS,
+    };
   },
 };
 </script>

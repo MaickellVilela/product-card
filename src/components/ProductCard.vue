@@ -1,19 +1,29 @@
 <template>
   <div class="product-card">
     <div class="image-container">
-      <img src="https://via.placeholder.com/500" alt="" />
+      <img :src="product.img" alt="" />
     </div>
     <div class="info-container">
-      <div class="title">Easy Feast St Louis Pork Ribs and Whole Chicken</div>
+      <div class="title">{{ product.title }}</div>
       <div class="details">
         <div class="price">
           $
-          <div class="amount">54.99</div>
+          <div class="amount">{{ product.price }}</div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    product: Object,
+    options: Object,
+    index: Number,
+  },
+};
+</script>
 
 <style lang="scss">
 .product-card {
