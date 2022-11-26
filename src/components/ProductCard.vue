@@ -37,6 +37,8 @@ $color-shades-60: #828282;
   background-color: white;
   max-width: 100%;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
 
   .image-container {
     max-width: 100%;
@@ -54,8 +56,10 @@ $color-shades-60: #828282;
     padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch;
+    justify-content: stretch;
     gap: 0.5rem;
+    flex-grow: 1;
 
     .title {
       display: -webkit-box;
@@ -64,6 +68,8 @@ $color-shades-60: #828282;
       -webkit-box-orient: vertical;
       overflow: hidden;
 
+      flex-grow: 1;
+
       font-size: $title-text-size;
       color: $color-shades-80;
     }
@@ -71,6 +77,7 @@ $color-shades-60: #828282;
     .price {
       font-size: $price-text-size;
       color: $color-shades-60;
+      text-align: right;
 
       .amount {
         font-weight: 700;
