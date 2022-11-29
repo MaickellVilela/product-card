@@ -32,7 +32,7 @@ export default {
 
   // contentainer width
   width: 100%;
-  max-width: 1184px;
+  max-width: 1440px;
 
   // centering
   margin-left: auto;
@@ -40,7 +40,7 @@ export default {
 
   // grid
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
   gap: 2rem;
 
   // breakpoints
