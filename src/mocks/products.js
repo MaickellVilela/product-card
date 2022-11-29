@@ -7,6 +7,10 @@ const PRODUCTS = [
       "Your choice of: St. Louis Ribs (3 Bones) 465 cal, Beef Ribs (1bone) 295 cal, Sliced Brisket 375 cal, Pulled Pork 265 cal, BBQ Chicken (1/4) 390 cal, Tri Tip 270 cal, Texas Red Hot Sausage (1) 300 cal. Served with your choice of 1 side and housemade biscuit & apple butter.",
     price: 16.99,
     available: true,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -16,7 +20,11 @@ const PRODUCTS = [
     description:
       "Premium chicken grilled with white American cheese, topped with lettuce, tomato, crispy cheddar onions and chipotle ranch dressing.",
     price: 7.29,
-    available: true,
+    available: false,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -26,6 +34,10 @@ const PRODUCTS = [
     description: "Haus made root beer batter",
     price: "5.00",
     available: true,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: true,
   },
   {
@@ -36,6 +48,10 @@ const PRODUCTS = [
       "3 Pieces of chicken, 2 individual sides, & 1 roll with honey.",
     price: 12.65,
     available: true,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -46,6 +62,10 @@ const PRODUCTS = [
       "Chicago's #1 Italian Beef & Italian Sausage served on perfectly baked French bread with small fry and drink. *This picture shows optional sweet and hot peppers that must be added to the sandwich, as they do not come standard.",
     price: 7.89,
     available: true,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -55,7 +75,11 @@ const PRODUCTS = [
     description:
       "Everything includes mustard, relish, celery salt, freshly chopped onions, sliced red ripe tomatoes, kosher pickle, and sport peppers piled onto a steamed poppy seed bun.",
     price: 3.49,
-    available: true,
+    available: false,
+    availabilityTag: {
+      label: "Sold Out",
+      type: "soldOut",
+    },
     hasOffer: false,
   },
 
@@ -66,6 +90,10 @@ const PRODUCTS = [
     description: "Creamy, great tasting cole slaw crafted in-house.",
     price: 3.99,
     available: true,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -75,6 +103,10 @@ const PRODUCTS = [
     description: "Choose from Plain, BBQ or Salt & Vinegar chips.",
     price: 2.39,
     available: true,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -85,6 +117,10 @@ const PRODUCTS = [
       "Premium vanilla ice cream, cut with a chocolaty ribbon, all sandwiched between two of the best chocolate chip cookies on the planet. Enjoy!",
     price: 3.0,
     available: true,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -94,7 +130,11 @@ const PRODUCTS = [
     description:
       "Ultra premium Brothers Mint Ice Cream enrobed in dark chocolate. A fan favorite! 12 BonBons in a box.",
     price: 9.99,
-    available: true,
+    available: false,
+    availabilityTag: {
+      label: "Sold out",
+      type: "soldOut",
+    },
     hasOffer: false,
   },
   {
@@ -105,6 +145,10 @@ const PRODUCTS = [
       "Flat fries topped with pastrami, swiss cheese, cole slaw and Russian dressing.",
     price: 7.29,
     available: false,
+    availabilityTag: {
+      label: "Available at 10pm",
+      type: "availableAt",
+    },
     hasOffer: true,
   },
   {
@@ -115,6 +159,10 @@ const PRODUCTS = [
       "Crisp romaine topped with focaccia croutons and shaved parmesan cheese, with a tangy parmesan Caesar dressing.",
     price: 12.65,
     available: false,
+    availabilityTag: {
+      label: "Available tomorrow",
+      type: "availableTomorrow",
+    },
     hasOffer: true,
   },
   {
@@ -124,6 +172,10 @@ const PRODUCTS = [
     description: "",
     price: 2.99,
     available: false,
+    availabilityTag: {
+      label: "Unavailable",
+      type: "unavailable",
+    },
     hasOffer: false,
   },
   {
@@ -133,6 +185,10 @@ const PRODUCTS = [
     description: "",
     price: 2300.99,
     available: false,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
   {
@@ -142,6 +198,10 @@ const PRODUCTS = [
     description: "",
     price: 2300.99,
     available: false,
+    availabilityTag: {
+      label: "Available later",
+      type: "availableLater",
+    },
     hasOffer: false,
   },
 ];

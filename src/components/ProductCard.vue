@@ -1,7 +1,19 @@
 <template>
-  <div class="product-card">
+  <div class="product-card" :class="{ __unavailable: !product.available }">
     <div class="image-container">
       <img :src="product.img" alt="" />
+      <span
+        class="tag"
+        :class="{
+          'available-later': product.availabilityTag.type == 'availableLater',
+          'available-at': product.availabilityTag.type == 'availableAt',
+          'available-tomorrow':
+            product.availabilityTag.type == 'availableTomorrow',
+          'unavailable-class': product.availabilityTag.type == 'unavailable',
+          'sold-out': product.availabilityTag.type == 'soldOut',
+        }"
+        >{{ product.availabilityTag.label }}</span
+      >
     </div>
     <div class="info-container">
       <div class="title">{{ product.title }}</div>
@@ -30,8 +42,12 @@ $title-text-size: 1.5rem;
 $price-text-size: $title-text-size;
 
 $color-shades-80: #333;
-$color-shades-70: #565656;
+$color-shades-70: rgba(0, 0, 0, 0.66);
 $color-shades-60: #828282;
+$color-shades-40: rgba(0, 0, 0, 0.25);
+$color-aux-a: #903ae0;
+$color-aux-b: #19917b;
+$color-aux-c: #ce3f1d;
 
 .product-card {
   background-color: white;
@@ -40,11 +56,35 @@ $color-shades-60: #828282;
   display: flex;
   flex-direction: column;
 
+  &.__unavailable {
+    .image-container {
+      img {
+        filter: opacity(0.5) saturate(0);
+      }
+
+      .tag {
+        display: block;
+      }
+    }
+
+    .info-container {
+      .title {
+        color: $color-shades-60;
+      }
+
+      .price,
+      .price .amount {
+        color: $color-shades-40;
+      }
+    }
+  }
+
   .image-container {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 100%;
     max-width: 100%;
+    position: relative;
 
     img {
       display: block;
@@ -52,6 +92,33 @@ $color-shades-60: #828282;
       width: 100%;
       height: 100%;
       border-radius: 1rem 1rem 0 0;
+    }
+
+    .tag {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top-right-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      font-size: 1.5rem;
+      color: white;
+      padding: 0.5rem 1rem;
+      background-color: gray;
+    }
+
+    .available-later {
+      background-color: $color-aux-a;
+    }
+
+    .available-at,
+    .available-tomorrow {
+      background-color: $color-aux-b;
+    }
+
+    .sold-out,
+    .unavailable-class {
+      background-color: $color-aux-c;
     }
   }
 
