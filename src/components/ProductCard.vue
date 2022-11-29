@@ -41,14 +41,17 @@ $color-shades-60: #828282;
   flex-direction: column;
 
   .image-container {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
     max-width: 100%;
 
     img {
       display: block;
+      object-fit: cover;
       width: 100%;
+      height: 100%;
       border-radius: 1rem 1rem 0 0;
-
-      // TODO: squared image
     }
   }
 
