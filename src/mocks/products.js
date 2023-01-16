@@ -181,7 +181,7 @@ const PRODUCTS = [
   {
     img: "https://via.placeholder.com/728x90",
     restaurantName: "Dog Haus",
-    title: "Debug image 278x90",
+    title: "Debug 278x90",
     description: "",
     price: 2300.99,
     available: false,

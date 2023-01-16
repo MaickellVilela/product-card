@@ -1,0 +1,21 @@
+@mixin up-mobile {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+//font face statement 
+@mixin font-face($font-family, $font-path, $font-weight: normal, $font-style: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-path + '.ttf');
+    src: url($font-path + '.ttf') format('truetype'),
+      url($font-path + '.woff') format('woff'),
+      url($font-path + '.woff2') format('woff2'),;
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@include font-face('GT Eesti Pro Text', '/fonts/GTEestiProText-Bold', 700, normal);
+@include font-face('GT Eesti Pro Text', '/fonts/GTEestiProText-Regular', 400, normal);

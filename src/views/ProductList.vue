@@ -27,22 +27,28 @@ export default {
 </script>
 
 <style lang="scss">
-.container {
-  background-color: rgb(235, 235, 235);
+@import "../assets/global-styles.scss";
 
+.container {
   // contentainer width
   width: 100%;
-  max-width: 1440px;
 
   // centering
   margin-left: auto;
   margin-right: auto;
 
-  // grid
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-  // breakpoints
+  @include up-mobile {
+    // contentainer width
+    max-width: 1440px;
+
+    // grid
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    gap: 2rem;
+  }
 }
 </style>

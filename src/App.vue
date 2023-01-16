@@ -10,7 +10,8 @@
 }
 
 #app {
-  font-family: "GT Eesti Pro Text", Helvetica, Arial, sans-serif;
+  // font-family: "GT Eesti Pro Text", Helvetica, Arial, sans-serif;
+  font-family: "GT Eesti Pro Text";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -38,6 +38,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/global-styles.scss";
+
 $title-text-size: 1.5rem;
 $price-text-size: $title-text-size;
 
@@ -49,12 +51,19 @@ $color-aux-a: #903ae0;
 $color-aux-b: #19917b;
 $color-aux-c: #ce3f1d;
 
+$mobile-img-size: 128px;
+
 .product-card {
   background-color: white;
   max-width: 100%;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   display: flex;
-  flex-direction: column;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.16));
+
+  @include up-mobile {
+    flex-direction: column;
+    border-radius: 1rem;
+  }
 
   &.__unavailable {
     .image-container {
@@ -82,29 +91,52 @@ $color-aux-c: #ce3f1d;
   .image-container {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 100%;
-    max-width: 100%;
+    width: $mobile-img-size;
+    height: $mobile-img-size;
     position: relative;
+
+    @include up-mobile {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
 
     img {
       display: block;
       object-fit: cover;
       width: 100%;
       height: 100%;
-      border-radius: 1rem 1rem 0 0;
+      border-radius: 0.5rem 0 0 0.5rem;
+
+      @include up-mobile {
+        border-radius: 1rem 1rem 0 0;
+      }
     }
 
     .tag {
       display: none;
+
       position: absolute;
       top: 0;
       right: 0;
-      border-top-right-radius: 1rem;
-      border-bottom-left-radius: 1rem;
-      font-size: 1.5rem;
+      max-width: 100%;
+
       color: white;
-      padding: 0.5rem 1rem;
       background-color: gray;
+
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+
+      @include up-mobile {
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
     }
 
     .available-later {
@@ -127,7 +159,7 @@ $color-aux-c: #ce3f1d;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: stretch;
+    justify-content: space-between;
     gap: 0.5rem;
     flex-grow: 1;
 
@@ -138,7 +170,7 @@ $color-aux-c: #ce3f1d;
       -webkit-box-orient: vertical;
       overflow: hidden;
 
-      flex-grow: 1;
+      flex-grow: 0;
 
       font-size: $title-text-size;
       color: $color-shades-80;
