@@ -51,6 +51,7 @@ export default {
 @import "../assets/global-styles.scss";
 
 $title-text-size: 1.5rem;
+$title-text-size-mobile: $title-text-size * 0.8;
 $price-text-size: $title-text-size;
 
 $mobile-img-size: 128px;
@@ -178,8 +179,12 @@ $mobile-img-size: 128px;
 
       flex-grow: 0;
 
-      font-size: $title-text-size;
+      font-size: $title-text-size * 0.8;
       color: $color-shades-80;
+
+      @include up-mobile {
+        font-size: $title-text-size;
+      }
     }
 
     .restaurant-name {
