@@ -22,18 +22,22 @@
           <span>$</span>
           <div class="amount">{{ product.price }}</div>
         </div>
+        <QuickAdd />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import QuickAdd from "./QuickAdd.vue";
+
 export default {
   props: {
     product: Object,
     options: Object,
     index: Number,
   },
+  components: { QuickAdd },
 };
 </script>
 
@@ -42,14 +46,6 @@ export default {
 
 $title-text-size: 1.5rem;
 $price-text-size: $title-text-size;
-
-$color-shades-80: #333;
-$color-shades-70: rgba(0, 0, 0, 0.66);
-$color-shades-60: #828282;
-$color-shades-40: rgba(0, 0, 0, 0.25);
-$color-aux-a: #903ae0;
-$color-aux-b: #19917b;
-$color-aux-c: #ce3f1d;
 
 $mobile-img-size: 128px;
 
@@ -155,7 +151,7 @@ $mobile-img-size: 128px;
   }
 
   .info-container {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -174,6 +170,17 @@ $mobile-img-size: 128px;
 
       font-size: $title-text-size;
       color: $color-shades-80;
+    }
+
+    .details {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      @include up-mobile {
+        align-items: center;
+      }
     }
 
     .price {

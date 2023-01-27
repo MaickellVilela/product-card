@@ -1,10 +1,13 @@
 <template>
-  <div class="container">
-    <ProductCard
-      v-for="(product, index) in PRODUCTS"
-      :key="index"
-      :product="product"
-    />
+  <div class="">
+    <div class="config">// input type checkbox</div>
+    <div class="container">
+      <ProductCard
+        v-for="(product, index) in PRODUCTS"
+        :key="index"
+        :product="product"
+      />
+    </div>
   </div>
 </template>
 
