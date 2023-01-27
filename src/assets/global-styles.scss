@@ -6,7 +6,7 @@ $color-shades-light: white;
 $color-aux-a: #903ae0;
 $color-aux-b: #19917b;
 $color-aux-c: #ce3f1d;
-$color-brand-primary: #F05123;
+$color-brand-primary: #f05123;
 
 @mixin up-mobile {
   @media screen and (min-width: 640px) {
@@ -19,18 +19,33 @@ $color-brand-primary: #F05123;
   @return $px / 16px * 1rem;
 }
 
-//font face statement 
-@mixin font-face($font-family, $font-path, $font-weight: normal, $font-style: normal) {
+// font face statement
+@mixin font-face(
+  $font-family,
+  $font-path,
+  $font-weight: normal,
+  $font-style: normal
+) {
   @font-face {
     font-family: $font-family;
-    src: url($font-path + '.ttf');
-    src: url($font-path + '.ttf') format('truetype'),
-      url($font-path + '.woff') format('woff'),
-      url($font-path + '.woff2') format('woff2'),;
+    src: url($font-path + ".ttf");
+    // src: url($font-path + '.ttf') format('truetype'),
+    //   url($font-path + '.woff') format('woff'),
+    //   url($font-path + '.woff2') format('woff2'),;
     font-weight: $font-weight;
     font-style: $font-style;
   }
 }
 
-@include font-face('GT Eesti Pro Text', '/fonts/GTEestiProText-Bold', 700, normal);
-@include font-face('GT Eesti Pro Text', '/fonts/GTEestiProText-Regular', 400, normal);
+@include font-face(
+  "GT Eesti Pro Display",
+  "/fonts/GT-Eesti-Display-Bold",
+  700,
+  normal
+);
+@include font-face(
+  "GT Eesti Pro Display",
+  "/fonts/GT-Eesti-Display-Regular",
+  400,
+  normal
+);
