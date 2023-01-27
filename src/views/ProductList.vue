@@ -51,7 +51,7 @@ export default {
 .container {
   // contentainer width
   width: 100%;
-  padding: px-to-rem(24px);
+  padding: px-to-rem(8px);
 
   // centering
   margin-left: auto;
