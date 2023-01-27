@@ -97,10 +97,10 @@ export default {
   },
   computed: {
     isEmpty() {
-      return this.value == 0;
+      return this.value === 0;
     },
     isOne() {
-      return this.value == 1;
+      return this.value === 1;
     },
   },
 };

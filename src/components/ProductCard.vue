@@ -16,10 +16,15 @@
       >
     </div>
     <div class="info-container">
-      <div class="title">{{ product.title }}</div>
+      <div class="title-group">
+        <div class="title">{{ product.title }}</div>
+        <div class="restaurant-name" v-if="showRestaurantName">
+          {{ product.restaurantName }}
+        </div>
+      </div>
       <div class="details">
         <div class="price">
-          <span>$</span>
+          <span>$ </span>
           <div class="amount">{{ product.price }}</div>
         </div>
         <QuickAdd />
@@ -36,6 +41,7 @@ export default {
     product: Object,
     options: Object,
     index: Number,
+    showRestaurantName: Boolean,
   },
   components: { QuickAdd },
 };
@@ -75,6 +81,10 @@ $mobile-img-size: 128px;
     .info-container {
       .title {
         color: $color-shades-60;
+      }
+
+      .restaurant-name {
+        color: $color-shades-40;
       }
 
       .price,
@@ -170,6 +180,17 @@ $mobile-img-size: 128px;
 
       font-size: $title-text-size;
       color: $color-shades-80;
+    }
+
+    .restaurant-name {
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      font-size: px-to-rem(14px);
+      color: $color-brand-primary;
     }
 
     .details {
